@@ -1,22 +1,7 @@
 /*
 main.cpp
 
-Driver program for converting from infix to postfix notation.
-
-Get an arithmetic expression from the user, convert it to postfix and
-evaluate it. Print the expression in postfix notation and the result.
-
-Uses class InfixExpr declared in InfixExpr.h to represent and work on
-an infix arithmetic expression.
-*/
-
-/*
-DSA Assignment 2
-
-Salman Abdullah
-221478 BSCS IIIC
-
-11 October 2023
+Basic command-line calculator driver program
 */
 
 #include "InfixExpr.h"
@@ -30,30 +15,31 @@ using std::string;
 
 int main()
 {
+    cout << "Enter \"exit\" to quit\n";
     InfixExpr expr;
     string expr_str;
     string choice;
     while (true)
     {
-        cout << "Enter an infix expression: ";
+        cout << ">> ";
         getline(cin, expr_str);
-
+        if (expr_str.empty())
+        {
+            cout << "Expression is empty\n";
+            continue;
+        }
+        if (expr_str == "exit") break;
         try
         {
             expr.assign(expr_str);
         }
         catch(std::invalid_argument)
         {
-            cout << "Please enter a valid infix expression\n";
+            cout << "Syntax error\n";
             continue;
         }
 
-        cout << "In postfix: " << expr.postfix() << '\n';
-        cout << "Result: " << expr.evaluate() << '\n';
-
-        cout << "Do you want to continue? (y/n): ";
-        getline(cin, choice);
-        if (choice == "n") break;
+        cout << expr.evaluate() << '\n';
     }
     return 0;
 }

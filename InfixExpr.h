@@ -6,15 +6,6 @@ Declares class InfixExpr
 Class InfixExpr represents an infix arithmetic expression
 */
 
-/*
-DSA Assignment 2
-
-Salman Abdullah
-221478 BSCS IIIC
-
-11 October 2023
-*/
-
 #ifndef INFIXEXPR_H
 #define INFIXEXPR_H
 

@@ -6,15 +6,6 @@ Queue.h declares class template Queue
 Class template Queue represents a queue data structure
 */
 
-/*
-DSA Assignment 2
-
-Salman Abdullah
-221478 BSCS IIIC
-
-11 October 2023
-*/
-
 #ifndef QUEUE_H
 #define QUEUE_H
 
